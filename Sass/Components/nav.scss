@@ -1,0 +1,32 @@
+.nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+    &__item {
+        padding: $padding-1;
+        margin: $margin-1;
+        font-size: 1.2rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        a {
+            color: $secondry-color-1;
+        }
+        &::after {
+            content: "";
+            background-color: $primary-color;
+            height: 2px;
+            width: 0px;
+            display: block;
+            transition: width 0.5s ease-out;
+            margin-top: 2px;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+        &--active::after {
+            width: 100%;
+        }
+    }
+}

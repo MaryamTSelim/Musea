@@ -1,0 +1,272 @@
+.slider {
+    &__container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        &__inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            justify-content: space-between;
+        }
+    }
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../Images/Slider/slider\ image\ 1.jpg");
+        background-position: right bottom;
+        transform: scale(1.1);
+        background-clip: border-box;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation-name: slider-image-animation;
+        animation-duration: 16s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    &__arrow {
+        &__container {
+            align-self: center;
+            z-index: 3;
+            padding: 10px;
+            color: $secondry-color-1;
+            font-size: 4rem;
+            &--right {
+                justify-self: right;
+            }
+        }
+    }
+    &__head {
+        color: $primary-color;
+        text-align: center;
+        &:first-child {
+            font-size: 2rem;
+            align-self: center;
+            justify-self: center;
+        }
+        &__container {
+            justify-self: center;
+            align-self: center;
+            width: 70%;
+            z-index: 3;
+            margin-top: 12rem;
+        }
+        &__line {
+            height: 5px;
+            background-color: $primary-color;
+            width: 15%;
+            display: inline-block;
+        }
+        &__text {
+            width: 69%;
+            display: inline-block;
+            text-align: center;
+            &::after {
+                content: "discover beauty";
+                color: white;
+                text-transform: uppercase;
+                font-size: 2rem;
+                animation-name: slider-text-animation;
+                animation-duration: 16s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+        &__indicator {
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            display: inline-block;
+            border: $secondry-color-1 solid 2.5px;
+            border-radius: 50%;
+            margin: 0 10px;
+            &__container {
+                width: fit-content;
+                margin: 0 auto;
+                margin-top: 10rem;
+            }
+            &--1 {
+                animation-name: slider-indicatior-1-animation;
+                animation-duration: 16s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            &--2 {
+                animation-name: slider-indicatior-2-animation;
+                animation-duration: 16s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            &--3 {
+                animation-name: slider-indicatior-3-animation;
+                animation-duration: 16s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            &--4 {
+                animation-name: slider-indicatior-4-animation;
+                animation-duration: 16s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
+
+@keyframes slider-image-animation {
+    0% {
+        background-image: url("../../Images/Slider/slider\ image\ 1.jpg");
+        background-position: right bottom;
+        transform: scale(1.1);
+    }
+    24% {
+        background-image: url("../../Images/Slider/slider\ image\ 1.jpg");
+        transform: scale(1);
+        background-position: left top;
+    }
+    25% {
+        background-image: url("../../Images/Slider/slider\ image\ 2.jpg");
+        transform: scale(1);
+        background-position: left top;
+    }
+    49% {
+        background-image: url("../../Images/Slider/slider\ image\ 2.jpg");
+        transform: scale(1.1);
+        background-position: right bottom;
+    }
+    50% {
+        background-image: url("../../Images/Slider/slider\ image\ 3.jpg");
+        transform: scale(1.1);
+        background-position: right bottom;
+    }
+    74% {
+        background-image: url("../../Images/Slider/slider\ image\ 3.jpg");
+        transform: scale(1);
+        background-position: left top;
+    }
+    75% {
+        background-image: url("../../Images/Slider/slider\ image\ 4.jpg");
+        transform: scale(1);
+        background-position: left top;
+    }
+    99% {
+        background-image: url("../../Images/Slider/slider\ image\ 4.jpg");
+        transform: scale(1.1);
+        background-position: right bottom;
+    }
+    100% {
+        background-image: url("../../Images/Slider/slider\ image\ 1.jpg");
+        transform: scale(1.1);
+        background-position: right bottom;
+    }
+}
+
+@keyframes slider-text-animation {
+    0% {
+        content: "discover beauty"
+    }
+    24% {
+        content: "discover beauty"
+    }
+    25% {
+        content: "hortense fiquet"
+    }
+    49% {
+        content: "hortense fiquet"
+    }
+    50% {
+        content: "new exhibition";
+    }
+    74% {
+        content: "new exhibition";
+    }
+    75% {
+        content: "modern classics";
+    }
+    99% {
+        content: "modern classics";
+    }
+    100% {
+        content: "discover beauty ";
+    }
+}
+
+@keyframes slider-indicatior-1-animation {
+    0% {
+        background-color: white;
+    }
+    24% {
+        background-color: white;
+    }
+    25% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes slider-indicatior-2-animation {
+    0% {
+        background-color: transparent;
+    }
+    24% {
+        background-color: transparent;
+    }
+    25% {
+        background-color: white;
+    }
+    49% {
+        background-color: white;
+    }
+    50% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes slider-indicatior-3-animation {
+    0% {
+        background-color: transparent;
+    }
+    49% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: white;
+    }
+    74% {
+        background-color: white;
+    }
+    75% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes slider-indicatior-4-animation {
+    0% {
+        background-color: transparent;
+    }
+    74% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: white;
+    }
+    99% {
+        background-color: white;
+    }
+    100% {
+        background-color: transparent;
+    }
+}

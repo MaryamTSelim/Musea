@@ -1,0 +1,32 @@
+.title {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 2rem;
+    width: 90%;
+    margin: $margin-3;
+    &__container {
+        width: 90%;
+        margin: 0% auto;
+    }
+    &__subcontainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__subheader {
+        display: block;
+        width: 100%;
+        &:first-child {
+            color: $primary-color;
+            font-size: 1.2rem;
+            text-align: center;
+            ;
+        }
+    }
+    &__line {
+        display: inline-block;
+        width: 10%;
+        height: 2px;
+        margin: 2rem;
+        background-color: $primary-color;
+    }
+}

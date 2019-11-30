@@ -1,0 +1,49 @@
+.dropdown {
+    &__container {
+        width: fit-content;
+        display: inline-block;
+        margin-left: 20px;
+        box-sizing: border-box;
+        padding: 10px;
+        &::after {
+            content: "";
+            background-color: $primary-color;
+            height: 2px;
+            width: 0px;
+            display: block;
+            transition: width 0.5s ease-out;
+            margin-top: 2px;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+            .dropdown__list {
+                max-height: 10000px;
+            }
+        }
+    }
+    &__head {
+        width: fit-content;
+        position: relative;
+    }
+    &__list {
+        margin-top: 20px;
+        width: fit-content;
+        background-color: $secondry-color-1;
+        max-height: 0px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 10;
+        transition: max-height 2s ease-in;
+    }
+    &__item {
+        padding: 5px 15px;
+        a {
+            color: $secondry-color-2;
+        }
+    }
+    &__item:hover {
+        background-color: $primary-color;
+    }
+}

@@ -1,0 +1,68 @@
+.info-card {
+    width: 20em;
+    &__image__container {
+        overflow: hidden;
+        &:hover .info-card__image {
+            transform: scale(1.1);
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+    &__body {
+        background-color: $secondry-color-1;
+        width: 80%;
+        z-index: 2;
+        padding: $padding-2;
+        position: relative;
+        top: -5em;
+    }
+    &__date {
+        color: $primary-color;
+        font-size: 1rem;
+        font-weight: lighter;
+        font-style: italic;
+    }
+    &__title {
+        color: $secondry-color-2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        ;
+    }
+    &__read-more__sub-container {
+        width: 49%;
+        display: inline-block;
+        padding: $padding-1;
+        margin-top: $margin-3;
+        position: relative;
+    }
+    &__read-more--animation--hidding {
+        background-color: $secondry-color-1;
+        height: 2px;
+        width: 10%;
+        position: absolute;
+        transition: right 0.8s;
+        z-index: 2;
+        right: 100%;
+    }
+    &__read-more--animation--line {
+        background-color: $primary-color;
+        height: 2px;
+        width: 80%;
+        position: absolute;
+        z-index: 1;
+    }
+    &__read-more__container:hover .info-card__read-more--animation--hidding {
+        right: 0%;
+    }
+    &__read-more__link {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}

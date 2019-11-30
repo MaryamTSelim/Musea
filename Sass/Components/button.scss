@@ -1,0 +1,51 @@
+.button {
+    display: block;
+    position: relative;
+    margin: $margin-1;
+    padding: $padding-1;
+    &__body {
+        display: inline-block;
+        padding: $padding-2;
+        background-color: transparent;
+        border: none;
+        color: $primary-color;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+        margin: 5px auto;
+    }
+    &__border {
+        background: $primary-color;
+        position: absolute;
+        &--horizontal {
+            display: block;
+            height: 3px;
+            width: 20%;
+            transition: width 1s;
+        }
+        &--vertical {
+            display: inline-block;
+            width: 3px;
+            height: 25%;
+            transition: height 1s;
+        }
+        &__left,
+        &__top {
+            left: 0;
+            top: 0;
+        }
+        &__bottom,
+        &__right {
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &:hover .button__border-- {
+        &horizontal {
+            width: 100%;
+        }
+        &vertical {
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+* {
+  font-family: "Dosis", sans-serif;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+}
+.nav__item {
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+.nav__item a {
+  color: white;
+}
+.nav__item::after {
+  content: "";
+  background-color: #c9ab81;
+  height: 2px;
+  width: 0px;
+  display: block;
+  transition: width 0.5s ease-out;
+  margin-top: 2px;
+}
+.nav__item:hover::after {
+  width: 100%;
+}
+.nav__item--active::after {
+  width: 100%;
+}
+
+.dropdown__container {
+  width: fit-content;
+  display: inline-block;
+  margin-left: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.dropdown__container::after {
+  content: "";
+  background-color: #c9ab81;
+  height: 2px;
+  width: 0px;
+  display: block;
+  transition: width 0.5s ease-out;
+  margin-top: 2px;
+}
+.dropdown__container:hover::after {
+  width: 100%;
+}
+.dropdown__container:hover .dropdown__list {
+  max-height: 10000px;
+}
+.dropdown__head {
+  width: fit-content;
+  position: relative;
+}
+.dropdown__list {
+  margin-top: 20px;
+  width: fit-content;
+  background-color: white;
+  max-height: 0px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 10;
+  transition: max-height 2s ease-in;
+}
+.dropdown__item {
+  padding: 5px 15px;
+}
+.dropdown__item a {
+  color: black;
+}
+.dropdown__item:hover {
+  background-color: #c9ab81;
+}
+
+.button {
+  display: block;
+  position: relative;
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+.button__body {
+  display: inline-block;
+  padding: 0.4rem;
+  background-color: transparent;
+  border: none;
+  color: #c9ab81;
+  text-align: center;
+  width: 100%;
+  font-size: 1.1rem;
+  margin: 5px auto;
+}
+.button__border {
+  background: #c9ab81;
+  position: absolute;
+}
+.button__border--horizontal {
+  display: block;
+  height: 3px;
+  width: 20%;
+  transition: width 1s;
+}
+.button__border--vertical {
+  display: inline-block;
+  width: 3px;
+  height: 25%;
+  transition: height 1s;
+}
+.button__border__left, .button__border__top {
+  left: 0;
+  top: 0;
+}
+.button__border__bottom, .button__border__right {
+  right: 0;
+  bottom: 0;
+}
+.button:hover .button__border--horizontal {
+  width: 100%;
+}
+.button:hover .button__border--vertical {
+  height: 100%;
+}
+
+.info-card {
+  width: 20em;
+}
+.info-card__image__container {
+  overflow: hidden;
+}
+.info-card__image__container:hover .info-card__image {
+  transform: scale(1.1);
+}
+.info-card__image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.info-card__body {
+  background-color: white;
+  width: 80%;
+  z-index: 2;
+  padding: 0.4rem;
+  position: relative;
+  top: -5em;
+}
+.info-card__date {
+  color: #c9ab81;
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+.info-card__title {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+.info-card__read-more__sub-container {
+  width: 49%;
+  display: inline-block;
+  padding: 0.2rem;
+  margin-top: 0.8rem;
+  position: relative;
+}
+.info-card__read-more--animation--hidding {
+  background-color: white;
+  height: 2px;
+  width: 10%;
+  position: absolute;
+  transition: right 0.8s;
+  z-index: 2;
+  right: 100%;
+}
+.info-card__read-more--animation--line {
+  background-color: #c9ab81;
+  height: 2px;
+  width: 80%;
+  position: absolute;
+  z-index: 1;
+}
+.info-card__read-more__container:hover .info-card__read-more--animation--hidding {
+  right: 0%;
+}
+.info-card__read-more__link {
+  color: #c9ab81;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.slider__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider__container__inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+.slider__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../Images/Slider/slider image 1.jpg");
+  background-position: right bottom;
+  transform: scale(1.1);
+  background-clip: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: slider-image-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__arrow__container {
+  align-self: center;
+  z-index: 3;
+  padding: 10px;
+  color: white;
+  font-size: 4rem;
+}
+.slider__arrow__container--right {
+  justify-self: right;
+}
+.slider__head {
+  color: #c9ab81;
+  text-align: center;
+}
+.slider__head:first-child {
+  font-size: 2rem;
+  align-self: center;
+  justify-self: center;
+}
+.slider__head__container {
+  justify-self: center;
+  align-self: center;
+  width: 70%;
+  z-index: 3;
+}
+.slider__head__line {
+  height: 5px;
+  background-color: #c9ab81;
+  width: 15%;
+  display: inline-block;
+}
+.slider__head__text {
+  width: 69%;
+  display: inline-block;
+  text-align: center;
+}
+.slider__head__text::after {
+  content: "discover beauty";
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+  animation-name: slider-text-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__head__indicator {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  display: inline-block;
+  border: white solid 2.5px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.slider__head__indicator__container {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+.slider__head__indicator--1 {
+  animation-name: slider-indicatior-1-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__head__indicator--2 {
+  animation-name: slider-indicatior-2-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__head__indicator--3 {
+  animation-name: slider-indicatior-3-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.slider__head__indicator--4 {
+  animation-name: slider-indicatior-4-animation;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes slider-image-animation {
+  0% {
+    background-image: url("../../Images/Slider/slider image 1.jpg");
+    background-position: right bottom;
+    transform: scale(1.1);
+  }
+  24% {
+    background-image: url("../../Images/Slider/slider image 1.jpg");
+    transform: scale(1);
+    background-position: left top;
+  }
+  25% {
+    background-image: url("../../Images/Slider/slider image 2.jpg");
+    transform: scale(1);
+    background-position: left top;
+  }
+  49% {
+    background-image: url("../../Images/Slider/slider image 2.jpg");
+    transform: scale(1.1);
+    background-position: right bottom;
+  }
+  50% {
+    background-image: url("../../Images/Slider/slider image 3.jpg");
+    transform: scale(1.1);
+    background-position: right bottom;
+  }
+  74% {
+    background-image: url("../../Images/Slider/slider image 3.jpg");
+    transform: scale(1);
+    background-position: left top;
+  }
+  75% {
+    background-image: url("../../Images/Slider/slider image 4.jpg");
+    transform: scale(1);
+    background-position: left top;
+  }
+  99% {
+    background-image: url("../../Images/Slider/slider image 4.jpg");
+    transform: scale(1.1);
+    background-position: right bottom;
+  }
+  100% {
+    background-image: url("../../Images/Slider/slider image 1.jpg");
+    transform: scale(1.1);
+    background-position: right bottom;
+  }
+}
+@keyframes slider-text-animation {
+  0% {
+    content: "discover beauty";
+  }
+  24% {
+    content: "discover beauty";
+  }
+  25% {
+    content: "hortense fiquet";
+  }
+  49% {
+    content: "hortense fiquet";
+  }
+  50% {
+    content: "new exhibition";
+  }
+  74% {
+    content: "new exhibition";
+  }
+  75% {
+    content: "modern classics";
+  }
+  99% {
+    content: "modern classics";
+  }
+  100% {
+    content: "discover beauty ";
+  }
+}
+@keyframes slider-indicatior-1-animation {
+  0% {
+    background-color: white;
+  }
+  24% {
+    background-color: white;
+  }
+  25% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}
+@keyframes slider-indicatior-2-animation {
+  0% {
+    background-color: transparent;
+  }
+  24% {
+    background-color: transparent;
+  }
+  25% {
+    background-color: white;
+  }
+  49% {
+    background-color: white;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes slider-indicatior-3-animation {
+  0% {
+    background-color: transparent;
+  }
+  49% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: white;
+  }
+  74% {
+    background-color: white;
+  }
+  75% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes slider-indicatior-4-animation {
+  0% {
+    background-color: transparent;
+  }
+  74% {
+    background-color: transparent;
+  }
+  75% {
+    background-color: white;
+  }
+  99% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.title {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 2rem;
+  width: 40 .title;
+}
+.title__container {
+  width: 70%;
+  margin: 0% auto;
+}
+.title__subheader {
+  display: block;
+  width: 100%;
+}
+.title__subheader:first-child {
+  color: #c9ab81;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.title__line {
+  display: inline-block;
+  width: 30%;
+  height: 2px;
+  background-color: #c9ab81;
+}
+
+.header {
+  z-index: 5;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+.header div {
+  display: flex;
+  justify-content: space-between;
+}
+.header div i {
+  color: #c9ab81;
+  font-size: 1.8rem;
+  margin: 0.4rem;
+}
+
+.home__slider {
+  position: absolute;
+  top: 0%;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.home__slider .button {
+  width: 15%;
+  margin: 1.5rem auto;
+}
+.home__article--1 {
+  margin-top: 35rem;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
