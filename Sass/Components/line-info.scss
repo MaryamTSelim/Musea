@@ -1,0 +1,15 @@
+.line__info {
+    &__miniheader {
+        font-size: 1.6rem;
+        color: $primary-color;
+    }
+    &__header {
+        font-size: 1.8rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__text {
+        padding: 2rem;
+        font-size: 1.2rem;
+    }
+}
