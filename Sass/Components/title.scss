@@ -1,8 +1,6 @@
 .title {
     text-transform: uppercase;
-    display: inline-block;
     font-size: 2rem;
-    width: 90%;
     margin: $margin-3;
     &__container {
         width: 90%;
@@ -11,6 +9,8 @@
     &__subcontainer {
         display: flex;
         justify-content: space-between;
+        width: 60%;
+        margin: 0% auto;
     }
     &__subheader {
         display: block;
@@ -19,12 +19,10 @@
             color: $primary-color;
             font-size: 1.2rem;
             text-align: center;
-            ;
         }
     }
     &__line {
-        display: inline-block;
-        width: 10%;
+        width: 15%;
         height: 2px;
         margin: 2rem;
         background-color: $primary-color;

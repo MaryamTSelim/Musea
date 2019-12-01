@@ -16,12 +16,20 @@ body {
   height: 100%;
 }
 
+section {
+  margin-bottom: 50px;
+}
+
 body {
   font-size: 62.5%;
 }
 
 * {
   font-family: "Dosis", sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 .nav {
@@ -105,6 +113,7 @@ body {
 
 .button {
   display: block;
+  width: 50%;
   position: relative;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -235,7 +244,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("../../Images/Slider/slider image 1.jpg");
+  background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-1.jpg");
   background-position: right bottom;
   transform: scale(1.1);
   background-clip: border-box;
@@ -270,6 +279,7 @@ body {
   align-self: center;
   width: 70%;
   z-index: 3;
+  margin-top: 12rem;
 }
 .slider__head__line {
   height: 5px;
@@ -333,47 +343,47 @@ body {
 
 @keyframes slider-image-animation {
   0% {
-    background-image: url("../../Images/Slider/slider image 1.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-1.jpg");
     background-position: right bottom;
     transform: scale(1.1);
   }
   24% {
-    background-image: url("../../Images/Slider/slider image 1.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-1.jpg");
     transform: scale(1);
     background-position: left top;
   }
   25% {
-    background-image: url("../../Images/Slider/slider image 2.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-2.jpg");
     transform: scale(1);
     background-position: left top;
   }
   49% {
-    background-image: url("../../Images/Slider/slider image 2.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-2.jpg");
     transform: scale(1.1);
     background-position: right bottom;
   }
   50% {
-    background-image: url("../../Images/Slider/slider image 3.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-3.jpg");
     transform: scale(1.1);
     background-position: right bottom;
   }
   74% {
-    background-image: url("../../Images/Slider/slider image 3.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-3.jpg");
     transform: scale(1);
     background-position: left top;
   }
   75% {
-    background-image: url("../../Images/Slider/slider image 4.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-4.jpg");
     transform: scale(1);
     background-position: left top;
   }
   99% {
-    background-image: url("../../Images/Slider/slider image 4.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-4.jpg");
     transform: scale(1.1);
     background-position: right bottom;
   }
   100% {
-    background-image: url("../../Images/Slider/slider image 1.jpg");
+    background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-rev-bg-img-1.jpg");
     transform: scale(1.1);
     background-position: right bottom;
   }
@@ -483,12 +493,17 @@ body {
 }
 .title {
   text-transform: uppercase;
-  display: inline-block;
   font-size: 2rem;
-  width: 40 .title;
+  margin: 0.8rem;
 }
 .title__container {
-  width: 70%;
+  width: 90%;
+  margin: 0% auto;
+}
+.title__subcontainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
   margin: 0% auto;
 }
 .title__subheader {
@@ -501,26 +516,44 @@ body {
   text-align: center;
 }
 .title__line {
-  display: inline-block;
-  width: 30%;
+  width: 15%;
   height: 2px;
+  margin: 2rem;
   background-color: #c9ab81;
 }
 
 .header {
   z-index: 5;
-  display: flex;
   padding: 15px;
-  justify-content: space-between;
-}
-.header div {
   display: flex;
   justify-content: space-between;
 }
-.header div i {
+.header .header__inner__container {
+  display: flex;
+  justify-content: space-between;
+}
+.header .header__inner__container.right {
+  float: right;
+  width: 40%;
+}
+.header .header__inner__container.right::after {
+  content: "";
+  clear: both;
+}
+.header .header__inner__container i {
   color: #c9ab81;
   font-size: 1.8rem;
-  margin: 0.4rem;
+  margin-right: 1.1rem;
+  padding-top: 10px;
+}
+
+.article__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.article__col {
+  padding: 30px;
 }
 
 .home__slider {
@@ -531,13 +564,48 @@ body {
   height: 100%;
 }
 .home__slider .button {
-  width: 15%;
+  width: 20%;
   margin: 1.5rem auto;
 }
 .home__article--1 {
   margin-top: 35rem;
   width: 100%;
   height: 100%;
+}
+.home__article--1 .article__col {
+  width: 32%;
+}
+.home__article--2 {
+  padding: 0%;
+}
+.home__article--2 .article__col {
+  width: 50%;
+  padding: 0%;
+}
+.home__article--3 .article__col {
+  width: 25%;
+}
+.home__article__image {
+  background-clip: border-box;
+  background-origin: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.home__article__image--1 {
+  background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-img-1.jpg");
+}
+.home__article__image--2 {
+  background-image: url("https://musea.qodeinteractive.com/wp-content/uploads/2019/09/h1-img-2.jpg");
+}
+.home__article .button {
+  float: right;
+  margin-top: 5rem;
+}
+.home__article .button::after {
+  content: "";
+  clear: both;
 }
 
 /*# sourceMappingURL=style.css.map */

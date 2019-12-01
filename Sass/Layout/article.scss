@@ -1,0 +1,10 @@
+.article {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__col {
+        padding: 30px;
+    }
+}

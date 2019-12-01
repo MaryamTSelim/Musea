@@ -8,7 +8,11 @@
         justify-content: space-between;
         &.right {
             float: right;
-            width: 30%;
+            width: 40%;
+            &::after {
+                content: "";
+                clear: both;
+            }
         }
         i {
             color: $primary-color;
